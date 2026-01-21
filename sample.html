@@ -7,36 +7,56 @@
     <link rel="stylesheet" href="style.css" />
     <title>Event-Driven Programming</title>
   </head>
-  <body>
-    <!-- <div id="sample" class="bg-blue-300 w-fit h-fit"></div>
-    <p id="paragraph">hi</p> -->
-    <!-- <h1 style="color: blue; font-size: 24px; text-align: center">
-      Hello World!
-    </h1>
-    <button
-      id="save-btn"
-      style="width: 60px; padding: 5px; background-color: rgb(236, 236, 173)"
+  <body
+    class="m-auto flex flex-row items-center justify-center min-h-screen gap-10"
+  >
+    <form
+      id="signupForm"
+      class="w-[30vw] h-[430px] bg-white shadow-lg border-1 border-slate-500 flex flex-col items-center justify-center gap-3"
     >
-      Fetch
-    </button>
+      <p class="text-2xl mb-5 mt-5 text-slate-500 font-bold">User Sign-up</p>
+      <!-- email address -->
+      <div class="flex flex-col gap-2">
+        <p>Email Address</p>
+        <input
+          type="email"
+          class="w-full h-[35px] bg-white border-1 border-slate-800 rounded-lg"
+          id="userEmail"
+        />
+        <span id="emailError" class="text-red-600 text-sm italic"></span>
+      </div>
 
-    <p id="textContent">hi</p>
+      <!-- phone number -->
+      <div class="flex flex-col gap-2">
+        <p>Phone Number</p>
+        <input
+          type="text"
+          maxlength="11"
+          id="userPhone"
+          class="w-full h-[35px] bg-white border-1 border-slate-800 rounded-lg"
+        />
+        <span id="phoneError" class="text-red-600 text-sm italic"></span>
+      </div>
 
-    <img id="imgElement" src="" />
+      <!-- password -->
+      <div class="flex flex-col gap-2">
+        <p>Password</p>
+        <input
+          type="password"
+          id="userPassword"
+          class="w-full h-[35px] bg-white border-1 border-slate-800 rounded-lg"
+        />
+        <span id="passwordError" class="text-red-600 text-sm italic"></span>
+      </div>
 
-    <div id="phoneNum">jsjjsj</div> -->
-
-    <input type="text" name="gender" id="text" class="border-1 bg-white" />
-    <h2>Choose Gender:</h2>
-    <div class="flex flex-row gap-4">
-      <p>Male</p>
-      <input type="radio" name="gender" value="male" id="genderr" />
-    </div>
-    <div class="flex flex-row gap-4">
-      <p>Female</p>
-      <input type="radio" name="gender" value="female" id="genderr" />
-    </div>
-
+      <!-- submit button (triggers validation) -->
+      <button
+        type="submit"
+        class="w-fit h-[35px] bg-slate-800 text-white rounded-lg px-5 mt-5 mb-5"
+      >
+        Sign Up
+      </button>
+    </form>
     <script src="example.js"></script>
   </body>
 </html>
