@@ -9,7 +9,7 @@
 
 const formElement = document.getElementById("signupForm");
 
-form.addEventListener("submit", function (e) {
+formElement.addEventListener("submit", function (e) {
   e.preventDefault();
 
   // pass the form element to the function
