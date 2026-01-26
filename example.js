@@ -59,3 +59,49 @@ function onFormSubmit(event) {
   const email = data.get("email");
   console.log(`Name: ${name}, Email: ${email}`);
 }
+
+// including FormValidation onsubmit (using boolean value: isValid as flag)
+function validateSignupForm(form) {
+  const email = form.querySelector("#userEmail").value.trim();
+  const phone = form.querySelector("#userPhone").value.trim();
+  const password = form.querySelector("#userPassword").value.trim();
+
+  const emailError = form.querySelector("#emailError");
+  const phoneError = form.querySelector("#phoneError");
+  const passwordError = form.querySelector("#passwordError");
+
+  emailError.textContent = "";
+  phoneError.textContent = "";
+  passwordError.textContent = "";
+
+  let isValid = true;
+
+  // Email validation
+  if (!email) {
+    emailError.textContent = "Email is required";
+    isValid = false;
+  } else if (!/^\S+@\S+\.\S+$/.test(email)) {
+    emailError.textContent = "Enter a valid email";
+    isValid = false;
+  }
+
+  // Phone validation
+  if (!phone) {
+    phoneError.textContent = "Phone number is required";
+    isValid = false;
+  } else if (!/^\d{11}$/.test(phone)) {
+    phoneError.textContent = "Phone must be 11 digits";
+    isValid = false;
+  }
+
+  // Password validation
+  if (!password) {
+    passwordError.textContent = "Password is required";
+    isValid = false;
+  } else if (password.length < 8) {
+    passwordError.textContent = "Password must be at least 8 characters";
+    isValid = false;
+  }
+
+  return isValid;
+}
