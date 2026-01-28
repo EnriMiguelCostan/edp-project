@@ -1,4 +1,6 @@
 const form = document.getElementById("signupForm");
+localStorage.setItem("GitHub", "louith");
+console.log(localStorage.getItem("i18nextLng"));
 
 // email validation function
 function isValidEmail(email) {
