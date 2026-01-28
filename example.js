@@ -1,6 +1,13 @@
 const form = document.getElementById("signupForm");
-localStorage.setItem("GitHub", "louith");
-console.log(localStorage.getItem("i18nextLng"));
+
+// sessionStorage.setItem("name", "Louise");
+// sessionStorage.removeItem("name");
+// sessionStorage.clear();
+// console.log(sessionStorage.getItem("name"));
+
+// document.cookie = "name=Louise; expires=" + new Date(2027, 0, 25);
+// // localStorage.setItem("GitHub", "louith");
+// console.log(localStorage.getItem("i18nextLng"));
 
 // email validation function
 function isValidEmail(email) {
@@ -41,26 +48,43 @@ function onFormSubmit(event) {
   event.preventDefault(); // stop reload
   const data = new FormData(event.target);
   const dataObject = Object.fromEntries(data.entries());
-  console.log(dataObject);
+  // const dataObject = Object.entries();
+  // console.log(dataObject);
+
+  // Save each form field in localStorage
+  for (const [key, value] of Object.entries(dataObject)) {
+    console.log([key, value]);
+    localStorage.setItem(key, value);
+  }
+  // console.log(Object.entries(dataObject));
+
+  alert("Form data saved in localStorage!");
 }
 
-// traverse FormData with forEach()
-function onFormSubmit(event) {
-  event.preventDefault();
-  const data = new FormData(event.target);
-  data.forEach((value, key) => {
-    console.log(`${key}: ${value}`);
-  });
+// Example: retrieve it later
+for (const key in localStorage) {
+  if (localStorage.hasOwnProperty(key)) {
+    console.log(`${key}: ${localStorage.getItem(key)}`);
+  }
 }
 
-// Accessing Form Data by Name
-function onFormSubmit(event) {
-  event.preventDefault();
-  const data = new FormData(event.target);
-  const name = data.get("name");
-  const email = data.get("email");
-  console.log(`Name: ${name}, Email: ${email}`);
-}
+// // traverse FormData with forEach()
+// function onFormSubmit(event) {
+//   event.preventDefault();
+//   const data = new FormData(event.target);
+//   data.forEach((value, key) => {
+//     console.log(`${key}: ${value}`);
+//   });
+// }
+
+// // Accessing Form Data by Name
+// function onFormSubmit(event) {
+//   event.preventDefault();
+//   const data = new FormData(event.target);
+//   const name = data.get("name");
+//   const email = data.get("email");
+//   console.log(`Name: ${name}, Email: ${email}`);
+// }
 
 // including FormValidation onsubmit (using boolean value: isValid as flag)
 function validateSignupForm(form) {
