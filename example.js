@@ -1,5 +1,7 @@
 // state → render → UI → event → state → render → UI
 
+// const [email, setEmail] = useState("");
+
 let state = {
   email: "",
   phoneNumber: "",
@@ -15,10 +17,11 @@ function setState(newState) {
 
 function handleInput(event) {
   const { name, value } = event.target;
-
   setState({
     [name]: value,
   });
+
+  // console.log(state);
 }
 
 document
