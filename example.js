@@ -47,14 +47,14 @@ form.addEventListener("submit", onFormSubmit);
 function onFormSubmit(event) {
   event.preventDefault(); // stop reload
   const data = new FormData(event.target);
-  const dataObject = Object.fromEntries(data.entries());
+  // const dataObject = Object.fromEntries(data.entries());
   // const dataObject = Object.entries();
-  // console.log(dataObject);
+  // console.log([...data]);
 
   // Save each form field in localStorage
   for (const [key, value] of Object.entries(dataObject)) {
     console.log([key, value]);
-    localStorage.setItem(key, value);
+    // localStorage.setItem(key, value);
   }
   // console.log(Object.entries(dataObject));
 
