@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Page B</title>
+    <style>
+      .dark {
+        background-color: #222;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Page B</h2>
+    <p>Why is dark mode gone?</p>
+    <!-- <button id="toggleBtn">Toggle Dark Mode</button> </br> -->
+    <a href="pageA.html">Go back to Page A</a>
+
+    <!-- <script src="index.js"></script> -->
+    <script>
+      const isDark = localStorage.getItem("isDark") === "true";
+      document.body.classList.toggle("dark", isDark);
+    </script>
+  </body>
+</html>
