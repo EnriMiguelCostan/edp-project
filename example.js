@@ -2,6 +2,7 @@
 
 // const [email, setEmail] = useState("");
 
+// main state/source of truth
 let state = {
   email: "",
   phoneNumber: "",
@@ -10,8 +11,9 @@ let state = {
 
 const form = document.getElementById("signupForm");
 
+//state mutation function
 function setState(newState) {
-  state = { ...state, ...newState };
+  state = { ...state, ...newState }; //overwrites the state with new values
   render();
 }
 
@@ -20,8 +22,6 @@ function handleInput(event) {
   setState({
     [name]: value,
   });
-
-  // console.log(state);
 }
 
 document
