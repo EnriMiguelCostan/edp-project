@@ -10,6 +10,8 @@ let state = {
 };
 
 const form = document.getElementById("signupForm");
+// const [state, setState] = useState({});
+// setState(data);
 
 //state mutation function
 function setState(newState) {
@@ -17,6 +19,7 @@ function setState(newState) {
   render();
 }
 
+//event handler
 function handleInput(event) {
   const { name, value } = event.target;
   setState({
@@ -24,10 +27,12 @@ function handleInput(event) {
   });
 }
 
+// event listeners for all inputs
 document
   .querySelectorAll("#signupForm input")
   .forEach((input) => input.addEventListener("input", handleInput));
 
+// render to change UI based on state
 function render() {
   if (state.email === "") {
     emailError.textContent = "Email is required!";
@@ -54,6 +59,7 @@ function render() {
   }
 }
 
+// form submission
 form.addEventListener("submit", function (event) {
   event.preventDefault();
 
