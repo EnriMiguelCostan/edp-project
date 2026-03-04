@@ -1,4 +1,5 @@
-// posts.js
+// import axios from "axios";
+
 document.addEventListener("DOMContentLoaded", () => {
   const postsContainer = document.getElementById("postsContainer");
   const loading = document.getElementById("loading");
