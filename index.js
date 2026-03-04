@@ -1,9 +1,17 @@
 // MouseEvent
 const clickBtn = document.getElementById("clickBtn");
 
-clickBtn.addEventListener("mousedown", (e) => {
-  console.log("MouseEvent", e.type);
-});
+// clickBtn.addEventListener("click", (e) => {
+//   console.log("MouseEvent", e);
+// });
+
+// clickBtn.addEventListener("keydown", (e) => {
+//   console.log("Keyboard Event", e.target.id);
+// });
+
+// clickBtn.addEventListener("click", (e) => {
+//   console.log("MouseEvent", e.srcElement.textContent);
+// });
 
 // clickBtn.addEventListener("contextmenu", (e) => {
 //   console.log("MouseEvent", e.type);
@@ -13,14 +21,10 @@ clickBtn.addEventListener("mousedown", (e) => {
 //   console.log("MouseEvent", e.type);
 // });
 
-// clickBtn.addEventListener("click", (e) => {
-//   console.log("MouseEvent", e.pointerType);
-// });
-
 // KeyboardEvent
 const textInput = document.getElementById("textInput");
-textInput.addEventListener("keydown", (e) => {
-  console.log("KeyboardEvent", e.constructor.name);
+textInput.addEventListener("keyup", (e) => {
+  console.log("KeyboardEvent", e.srcElement.value);
 });
 textInput.addEventListener("input", (e) => {
   console.log("InputEvent", e.constructor.name);
@@ -37,7 +41,7 @@ textInput.addEventListener("blur", (e) => {
 // PointerEvent: clicking / touching div
 const hoverBox = document.getElementById("hoverBox");
 hoverBox.addEventListener("pointerdown", (e) => {
-  console.log("PointerEvent", e.constructor.name);
+  console.log("PointerEvent", e.srcElement.innerHTML);
 });
 
 // CustomEvent: triggered by custom button
