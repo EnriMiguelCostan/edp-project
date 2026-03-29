@@ -10,6 +10,10 @@ app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
 
+app.get("/users", (req, res) => {
+  res.json(users);
+});
+
 // post request
 app.post("/users", (req, res) => {
   const newUser = {
