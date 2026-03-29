@@ -14,6 +14,19 @@ app.get("/users", (req, res) => {
   res.json(users);
 });
 
+// getting a single user by id
+app.get("/users/:id", (req, res) => {
+  const id = parseInt(req.params.id);
+
+  const user = users.find((u) => u.id === id);
+
+  if (!user) {
+    return res.status(404).json({ message: "User not found" });
+  }
+
+  res.json(user);
+});
+
 // post request
 app.post("/users", (req, res) => {
   const newUser = {
