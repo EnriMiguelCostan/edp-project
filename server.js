@@ -29,9 +29,18 @@ app.get("/users/:id", (req, res) => {
 
 // post request
 app.post("/users", (req, res) => {
+  const { name, email } = req.body;
+
+  if (!name || !email) {
+    return res.status(400).json({
+      message: "Name and email are required",
+    });
+  }
+
   const newUser = {
     id: users.length + 1,
-    name: req.body.name,
+    name,
+    email,
   };
 
   users.push(newUser);
